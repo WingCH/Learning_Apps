@@ -15,6 +15,8 @@
 		0E4203642523615C000C5598 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4203632523615C000C5598 /* Coordinator.swift */; };
 		0E42036625236C90000C5598 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E42036525236C90000C5598 /* Storyboard.swift */; };
 		0E4203682523718F000C5598 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4203672523718F000C5598 /* MainCoordinator.swift */; };
+		0E42036A25237661000C5598 /* BuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E42036925237661000C5598 /* BuyViewController.swift */; };
+		0E42036C25237676000C5598 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E42036B25237676000C5598 /* CreateAccountViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		0E4203632523615C000C5598 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		0E42036525236C90000C5598 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		0E4203672523718F000C5598 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		0E42036925237661000C5598 /* BuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyViewController.swift; sourceTree = "<group>"; };
+		0E42036B25237676000C5598 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 				0E42035825236108000C5598 /* Assets.xcassets */,
 				0E42035A25236108000C5598 /* LaunchScreen.storyboard */,
 				0E42035D25236108000C5598 /* Info.plist */,
+				0E42036925237661000C5598 /* BuyViewController.swift */,
+				0E42036B25237676000C5598 /* CreateAccountViewController.swift */,
 			);
 			path = "how-to-use-the-coordinator-pattern-in-ios-apps";
 			sourceTree = "<group>";
@@ -144,11 +150,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E42036C25237676000C5598 /* CreateAccountViewController.swift in Sources */,
 				0E4203642523615C000C5598 /* Coordinator.swift in Sources */,
 				0E4203682523718F000C5598 /* MainCoordinator.swift in Sources */,
 				0E42036625236C90000C5598 /* Storyboard.swift in Sources */,
 				0E42035425236106000C5598 /* ViewController.swift in Sources */,
 				0E42035025236106000C5598 /* AppDelegate.swift in Sources */,
+				0E42036A25237661000C5598 /* BuyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
