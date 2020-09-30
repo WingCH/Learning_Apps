@@ -9,7 +9,8 @@
 import Foundation
 import UIKit
 
-class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
+class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate, Buying, AccountCreating {
+    
     var childCoordinators: [Coordinator] = []
     
     var navigationController: UINavigationController
@@ -22,7 +23,14 @@ class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
         navigationController.delegate = self
         let vc = ViewController.instantiate()
         vc.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
-        vc.coordinator = self
+        vc.buyAction = { [weak self] productType in
+            self?.buySubscription(to: productType)
+        }
+        
+        vc.createAccountAction = { [weak self] in
+            self?.createAccount()
+        }
+        
         navigationController.pushViewController(vc, animated: false)
     }
     
