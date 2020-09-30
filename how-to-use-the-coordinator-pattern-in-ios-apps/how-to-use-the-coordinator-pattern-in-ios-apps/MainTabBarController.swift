@@ -15,7 +15,10 @@ class MainTabBarController: UITabBarController {
         super.viewDidLoad()
         
         main.start()
-        viewControllers = [main.navigationController]
+        
+        let vc = UIViewController()
+        vc.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 0)
+        viewControllers = [main.navigationController, vc]
     }
     
 
