@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E26EF4225241D380076F58C /* BuyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E26EF4125241D380076F58C /* BuyCoordinator.swift */; };
+		0E26EF44252428250076F58C /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E26EF43252428250076F58C /* MainTabBarController.swift */; };
 		0E42035025236106000C5598 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E42034F25236106000C5598 /* AppDelegate.swift */; };
 		0E42035425236106000C5598 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E42035325236106000C5598 /* ViewController.swift */; };
 		0E42035725236106000C5598 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E42035525236106000C5598 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		0E26EF4125241D380076F58C /* BuyCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyCoordinator.swift; sourceTree = "<group>"; };
+		0E26EF43252428250076F58C /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		0E42034C25236106000C5598 /* how-to-use-the-coordinator-pattern-in-ios-apps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "how-to-use-the-coordinator-pattern-in-ios-apps.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E42034F25236106000C5598 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E42035325236106000C5598 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				0E42035D25236108000C5598 /* Info.plist */,
 				0E42036925237661000C5598 /* BuyViewController.swift */,
 				0E42036B25237676000C5598 /* CreateAccountViewController.swift */,
+				0E26EF43252428250076F58C /* MainTabBarController.swift */,
 			);
 			path = "how-to-use-the-coordinator-pattern-in-ios-apps";
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 			files = (
 				0E42036C25237676000C5598 /* CreateAccountViewController.swift in Sources */,
 				0E4203642523615C000C5598 /* Coordinator.swift in Sources */,
+				0E26EF44252428250076F58C /* MainTabBarController.swift in Sources */,
 				0E4203682523718F000C5598 /* MainCoordinator.swift in Sources */,
 				0E26EF4225241D380076F58C /* BuyCoordinator.swift in Sources */,
 				0E42036625236C90000C5598 /* Storyboard.swift in Sources */,

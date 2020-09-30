@@ -21,13 +21,14 @@ class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
     func start() {
         navigationController.delegate = self
         let vc = ViewController.instantiate()
+        vc.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: false)
     }
     
     func buySubscription(to productType: Int) {
         let vc = BuyCoordinator(navigationController: navigationController)
-        vc.selectProduct = productType
+        vc.selectProduct = productType 
         vc.parentCoordinator = self
         childCoordinators.append(vc)
         vc.start()
