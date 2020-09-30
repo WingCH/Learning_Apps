@@ -22,12 +22,13 @@ class TopRatedDetailCoordinator: Coordinator, TopRatedDetailFlow {
     func start() {
         let topRatedDetailViewController = TopRatedDetailViewController()
         topRatedDetailViewController.coordinator = self
-        
-        navigationController.present(topRatedDetailViewController, animated: true, completion: nil)
+        navigationController.pushViewController(topRatedDetailViewController, animated: true)
+//        navigationController.present(topRatedDetailViewController, animated: true, completion: nil)
     }
     
     // MARK: - Flow Methods
     func dismissDetail() {
-        navigationController.dismiss(animated: true, completion: nil)
+//        navigationController.dismiss(animated: true, completion: nil)
+        navigationController.popViewController(animated: true)
     }
 }

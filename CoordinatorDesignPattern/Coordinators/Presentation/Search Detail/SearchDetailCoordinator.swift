@@ -22,7 +22,7 @@ class SearchDetailCoordinator: Coordinator, SearchDetailFlow {
     func start() {
         let searchDetailViewController = SearchDetailViewController()
         searchDetailViewController.coordinator = self
-        
+        searchDetailViewController.modalPresentationStyle = .fullScreen
         navigationController.present(searchDetailViewController, animated: true, completion: nil)
     }
     
