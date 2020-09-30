@@ -10,6 +10,7 @@ import UIKit
 
 class BuyCoordinator: Coordinator {
     weak var parentCoordinator: MainCoordinator?
+    var selectProduct = 0
     
     var childCoordinators: [Coordinator] = []
     var navigationController: UINavigationController

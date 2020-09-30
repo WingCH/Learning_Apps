@@ -29,16 +29,28 @@
                                     <action selector="createAccountTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="asJ-a8-kd6"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4O2-SQ-bbu">
+                                <rect key="frame" x="141.5" y="481" width="131" height="32"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="7R5-e9-pKx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5IJ-72-JGy"/>
                             <constraint firstItem="KMD-0f-q1t" firstAttribute="top" secondItem="7R5-e9-pKx" secondAttribute="bottom" constant="8" id="BVF-sj-nNx"/>
+                            <constraint firstItem="4O2-SQ-bbu" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Lbm-5S-YTi"/>
+                            <constraint firstItem="4O2-SQ-bbu" firstAttribute="top" secondItem="KMD-0f-q1t" secondAttribute="bottom" constant="8" id="XYz-KZ-hOO"/>
                             <constraint firstItem="7R5-e9-pKx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="361" id="ew6-qz-HeW"/>
                             <constraint firstItem="7R5-e9-pKx" firstAttribute="centerX" secondItem="KMD-0f-q1t" secondAttribute="centerX" id="kQH-9Z-Em5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="product" destination="4O2-SQ-bbu" id="Vse-FQ-H4T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
