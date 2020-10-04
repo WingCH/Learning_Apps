@@ -591,7 +591,7 @@
 					};
 					D50F9EEE1C7A525E00C5A59F = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = CMWP53JFC4;
+						DevelopmentTeam = AL869FRMV6;
 						LastSwiftMigration = 1100;
 					};
 				};
@@ -889,10 +889,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = CMWP53JFC4;
+				DEVELOPMENT_TEAM = AL869FRMV6;
 				INFOPLIST_FILE = "$(SRCROOT)/ApplicationCoordinator/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.panovdev.ApplicationCoordinator;
+				PRODUCT_BUNDLE_IDENTIFIER = wingch.com.panovdev.ApplicationCoordinator;
 				PRODUCT_NAME = ApplicationCoordinator;
 				SWIFT_OBJC_BRIDGING_HEADER = "ApplicationCoordinator/Application/ApplicationCoordinator-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -907,10 +907,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = CMWP53JFC4;
+				DEVELOPMENT_TEAM = AL869FRMV6;
 				INFOPLIST_FILE = "$(SRCROOT)/ApplicationCoordinator/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.panovdev.ApplicationCoordinator;
+				PRODUCT_BUNDLE_IDENTIFIER = wingch.com.panovdev.ApplicationCoordinator;
 				PRODUCT_NAME = ApplicationCoordinator;
 				SWIFT_OBJC_BRIDGING_HEADER = "ApplicationCoordinator/Application/ApplicationCoordinator-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
