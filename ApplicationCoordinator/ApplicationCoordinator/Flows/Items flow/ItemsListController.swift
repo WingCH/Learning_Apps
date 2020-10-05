@@ -43,6 +43,9 @@ extension ItemsListController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         onItemSelect?(items[(indexPath as NSIndexPath).row])
+//        let itemDetailFlowOutput = ItemModuleFactory().makeItemDetailOutput(item: items[(indexPath as NSIndexPath).row])
+
+//        navigationController?.pushViewController(itemDetailFlowOutput, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

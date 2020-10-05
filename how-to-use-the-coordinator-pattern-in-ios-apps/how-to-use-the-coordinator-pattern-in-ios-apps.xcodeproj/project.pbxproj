@@ -72,11 +72,11 @@
 		0E42034E25236106000C5598 /* how-to-use-the-coordinator-pattern-in-ios-apps */ = {
 			isa = PBXGroup;
 			children = (
+				0E42034F25236106000C5598 /* AppDelegate.swift */,
 				0E4203632523615C000C5598 /* Coordinator.swift */,
 				0E42036525236C90000C5598 /* Storyboard.swift */,
 				0E4203672523718F000C5598 /* MainCoordinator.swift */,
 				0E26EF4125241D380076F58C /* BuyCoordinator.swift */,
-				0E42034F25236106000C5598 /* AppDelegate.swift */,
 				0E42035325236106000C5598 /* ViewController.swift */,
 				0E42035525236106000C5598 /* Main.storyboard */,
 				0E42035825236108000C5598 /* Assets.xcassets */,
