@@ -1,6 +1,6 @@
 final class CoordinatorFactoryImp: CoordinatorFactory {
   
-  func makeTabbarCoordinator() -> (configurator: Coordinator, toPresent: Presentable?) {
+  func makeTabbarCoordinator() -> (configurator: Coordinator & TabbarCoordinatorOutput, toPresent: Presentable?) {
     let controller = TabbarController.controllerFromStoryboard(.main)
     let coordinator = TabbarCoordinator(tabbarView: controller, coordinatorFactory: CoordinatorFactoryImp())
     return (coordinator, controller)
@@ -29,11 +29,11 @@ final class CoordinatorFactoryImp: CoordinatorFactory {
     return coordinator
   }
   
-  func makeSettingsCoordinator() -> Coordinator {
+  func makeSettingsCoordinator() -> Coordinator & SettingsCoordinatorOutput {
     return makeSettingsCoordinator(navController: nil)
   }
   
-  func makeSettingsCoordinator(navController: UINavigationController? = nil) -> Coordinator {
+  func makeSettingsCoordinator(navController: UINavigationController? = nil) -> Coordinator & SettingsCoordinatorOutput {
     let coordinator = SettingsCoordinator(router: router(navController), factory: ModuleFactoryImp())
     return coordinator
   }

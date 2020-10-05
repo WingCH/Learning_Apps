@@ -1,4 +1,6 @@
-class TabbarCoordinator: BaseCoordinator {
+class TabbarCoordinator: BaseCoordinator, TabbarCoordinatorOutput {
+    
+    var finishFlow: (() -> Void)?
     
     private let tabbarView: TabbarView
     private let coordinatorFactory: CoordinatorFactory
@@ -28,8 +30,16 @@ class TabbarCoordinator: BaseCoordinator {
         return { [unowned self] navController in
             if navController.viewControllers.isEmpty == true {
                 let settingsCoordinator = self.coordinatorFactory.makeSettingsCoordinator(navController: navController)
+                
+                settingsCoordinator.finishFlow = { [weak self, weak settingsCoordinator] in
+                    self?.finishFlow?()
+                    self?.removeDependency(settingsCoordinator)
+                }
+                
                 self.addDependency(settingsCoordinator)
                 settingsCoordinator.start()
+            }else{
+                print("aaa")
             }
         }
     }

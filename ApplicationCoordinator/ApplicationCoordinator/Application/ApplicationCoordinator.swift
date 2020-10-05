@@ -76,8 +76,15 @@ final class ApplicationCoordinator: BaseCoordinator {
   
   private func runMainFlow() {
     let (coordinator, module) = coordinatorFactory.makeTabbarCoordinator()
+    
+    coordinator.finishFlow = { [weak self, weak coordinator] in
+      isAutorized = false
+      self?.start()
+      self?.removeDependency(coordinator)
+    }
     addDependency(coordinator)
     router.setRootModule(module, hideBar: true)
+    
     coordinator.start()
   }
 }

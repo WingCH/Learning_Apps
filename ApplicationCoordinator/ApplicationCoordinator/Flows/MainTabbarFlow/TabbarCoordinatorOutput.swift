@@ -1,3 +1,3 @@
-protocol SettingsCoordinatorOutput: class {
+protocol TabbarCoordinatorOutput: class {
   var finishFlow: (() -> Void)? { get set }
 }
