@@ -23,7 +23,6 @@ class BuyCoordinator: Coordinator {
         let vc = BuyViewController.instantiate()
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
-//        navigationController.present(vc, animated: true, completion: nil)
     }
     
 //    func didFinishBuying() {

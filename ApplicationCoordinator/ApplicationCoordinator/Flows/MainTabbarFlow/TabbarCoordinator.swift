@@ -16,33 +16,31 @@ class TabbarCoordinator: BaseCoordinator, TabbarCoordinatorOutput {
         tabbarView.onSettingsFlowSelect = runSettingsFlow()
     }
     
-    //    private func runItemFlow() -> ((UINavigationController) -> ()) {
-    private func runItemFlow() -> (() -> ()) {
-        return {
-            //            if navController.viewControllers.isEmpty == true {
-            //                let itemCoordinator = self.coordinatorFactory.makeItemCoordinator(navController: navController)
-            let itemCoordinator = self.coordinatorFactory.makeItemCoordinator()
-            self.addDependency(itemCoordinator)
-            itemCoordinator.start()
-            //            }
+    private func runItemFlow() -> ((UINavigationController) -> ()) {
+        return { [unowned self] navController in
+            if navController.viewControllers.isEmpty == true {
+                let itemCoordinator = self.coordinatorFactory.makeItemCoordinator(navController: navController)
+                self.addDependency(itemCoordinator)
+                itemCoordinator.start()
+            }
         }
     }
     
-    //    private func runSettingsFlow() -> ((UINavigationController) -> ()) {
-    private func runSettingsFlow() -> (() -> ()) {
-        return {
-            //            if navController.viewControllers.isEmpty == true {
-            //                let settingsCoordinator = self.coordinatorFactory.makeSettingsCoordinator(navController: navController)
-            let settingsCoordinator = self.coordinatorFactory.makeSettingsCoordinator()
-            
-            settingsCoordinator.finishFlow = { [weak self, weak settingsCoordinator] in
-                self?.finishFlow?()
-                self?.removeDependency(settingsCoordinator)
+    private func runSettingsFlow() -> ((UINavigationController) -> ()) {
+        return { [unowned self] navController in
+            if navController.viewControllers.isEmpty == true {
+                let settingsCoordinator = self.coordinatorFactory.makeSettingsCoordinator(navController: navController)
+                
+                settingsCoordinator.finishFlow = { [weak self, weak settingsCoordinator] in
+                    self?.finishFlow?()
+                    self?.removeDependency(settingsCoordinator)
+                }
+                
+                self.addDependency(settingsCoordinator)
+                settingsCoordinator.start()
+            }else{
+                print("aaa")
             }
-            
-            self.addDependency(settingsCoordinator)
-            settingsCoordinator.start()
-            //            }
         }
     }
 }
