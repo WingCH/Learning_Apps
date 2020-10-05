@@ -15,7 +15,7 @@ final class SettingsController: UIViewController, SettingsView {
         title = "Settings"
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(
-            barButtonSystemItem: .add,
+            barButtonSystemItem: .stop,
             target: self,
             action: #selector(SettingsController.logoutButtonClicked(_:))
         )
