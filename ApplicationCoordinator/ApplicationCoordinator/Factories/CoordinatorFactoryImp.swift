@@ -2,7 +2,7 @@ final class CoordinatorFactoryImp: CoordinatorFactory {
     
     func makeTabbarCoordinator() -> (configurator: Coordinator & TabbarCoordinatorOutput, toPresent: Presentable?) {
         let controller = TabbarController.controllerFromStoryboard(.main)
-        let coordinator = TabbarCoordinator(tabbarView: controller, coordinatorFactory: CoordinatorFactoryImp())
+        let coordinator = TabbarCoordinator(tabbarView: controller, coordinatorFactory: self)
         return (coordinator, controller)
     }
     

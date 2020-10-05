@@ -2,9 +2,7 @@
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    var rootController: UINavigationController {
-        return self.window!.rootViewController as! UINavigationController
-    }
+    var rootController: UINavigationController = UINavigationController()
     
     // https://medium.com/wolox/ios-deep-linking-url-scheme-vs-universal-links-50abd3802f97
     // URL Scheme:  com.myApp://xxx
@@ -39,6 +37,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func makeCoordinator() -> Coordinator {
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = rootController
+        window?.makeKeyAndVisible()
+        
         return ApplicationCoordinator(
             router: RouterImp(rootController: self.rootController),
             coordinatorFactory: CoordinatorFactoryImp()
