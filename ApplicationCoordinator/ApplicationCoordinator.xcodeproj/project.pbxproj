@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E26EF4A252AFA5E0076F58C /* SettingsCoordinatorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E26EF49252AFA5E0076F58C /* SettingsCoordinatorOutput.swift */; };
+		0E26EF4C252B03D80076F58C /* TabbarCoordinatorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E26EF4B252B03D80076F58C /* TabbarCoordinatorOutput.swift */; };
 		0E3CCF991CCBBB670022E830 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3CCF7D1CCBBB670022E830 /* AppDelegate.swift */; };
 		0E3CCF9A1CCBBB670022E830 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3CCF7E1CCBBB670022E830 /* ApplicationCoordinator.swift */; };
 		0E3CCF9D1CCBBB670022E830 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E3CCF821CCBBB670022E830 /* LaunchScreen.storyboard */; };
@@ -86,6 +88,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E26EF49252AFA5E0076F58C /* SettingsCoordinatorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinatorOutput.swift; sourceTree = "<group>"; };
+		0E26EF4B252B03D80076F58C /* TabbarCoordinatorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarCoordinatorOutput.swift; sourceTree = "<group>"; };
 		0E3CCF7D1CCBBB670022E830 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AppDelegate.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		0E3CCF7E1CCBBB670022E830 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ApplicationCoordinator.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		0E3CCF831CCBBB670022E830 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -253,6 +257,7 @@
 		0E3CCF8D1CCBBB670022E830 /* Settings flow */ = {
 			isa = PBXGroup;
 			children = (
+				0E26EF49252AFA5E0076F58C /* SettingsCoordinatorOutput.swift */,
 				0E3CCFBD1CCBC04B0022E830 /* SettingsCoordinator.swift */,
 				D5FDC8531CEB56A8001C3DF3 /* SettingsView.swift */,
 				0E3CCFBF1CCBC0600022E830 /* SettingsController.swift */,
@@ -459,6 +464,7 @@
 		ADE320F31E4796810087146A /* MainTabbarFlow */ = {
 			isa = PBXGroup;
 			children = (
+				0E26EF4B252B03D80076F58C /* TabbarCoordinatorOutput.swift */,
 				ADE320F51E4796D90087146A /* TabbarCoordinator.swift */,
 				ADE320F61E4796D90087146A /* TabbarView.swift */,
 				ADE320F41E4796D90087146A /* TabbarController.swift */,
@@ -674,8 +680,10 @@
 				AD2BFC161E75B95F0059C854 /* OnboardingCoordinatorOutput.swift in Sources */,
 				D5311AAF1CF8566D00777B87 /* ItemCreateController.swift in Sources */,
 				0E3CCFBC1CCBC0210022E830 /* AuthCoordinator.swift in Sources */,
+				0E26EF4A252AFA5E0076F58C /* SettingsCoordinatorOutput.swift in Sources */,
 				AD2BFC121E75B7FE0059C854 /* StepController.swift in Sources */,
 				D5FE33371D071F6300CE38B1 /* ItemsListController.swift in Sources */,
+				0E26EF4C252B03D80076F58C /* TabbarCoordinatorOutput.swift in Sources */,
 				0E3CCFC01CCBC0600022E830 /* SettingsController.swift in Sources */,
 				0E6A42BE1CF4DE62005746EC /* CoordinatorFactory.swift in Sources */,
 				D5505CC91CDF68260012CBA6 /* NSObjectExtensions.swift in Sources */,

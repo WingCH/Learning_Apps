@@ -68,7 +68,7 @@ final class ApplicationCoordinator: BaseCoordinator {
     coordinator.finishFlow = { [weak self, weak coordinator] in
       onboardingWasShown = true
       self?.start()
-      self?.removeDependency(coordinator)
+//      self?.removeDependency(coordinator)
     }
     addDependency(coordinator)
     coordinator.start()
