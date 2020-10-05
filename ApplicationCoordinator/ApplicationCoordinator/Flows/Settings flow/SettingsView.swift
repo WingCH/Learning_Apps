@@ -1,2 +1,4 @@
-protocol SettingsView: BaseView { }
+protocol SettingsView: BaseView {
+    var onLogout: (() -> Void)? { get set }
+}
 

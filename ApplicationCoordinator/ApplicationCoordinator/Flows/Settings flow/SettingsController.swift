@@ -1,15 +1,25 @@
 final class SettingsController: UIViewController, SettingsView {
-    
     //controller handler
+    var onLogout: (() -> Void)?
+    
     
     @IBOutlet weak var tableView: UITableView!
     //mock datasource
     var settings: [[Setting]] = [[]]
     
+    @IBAction func logoutButtonClicked(_ sender: UIBarButtonItem) { onLogout?() }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Settings"
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .add,
+            target: self,
+            action: #selector(SettingsController.logoutButtonClicked(_:))
+        )
+        
         makeMockData()
     }
     
