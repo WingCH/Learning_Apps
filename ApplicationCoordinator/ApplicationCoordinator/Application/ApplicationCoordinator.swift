@@ -1,4 +1,6 @@
+// 已顯示? (教學頁只顯示一次)
 fileprivate var onboardingWasShown = false
+// 已登入?
 fileprivate var isAutorized = false
 
 fileprivate enum LaunchInstructor {
