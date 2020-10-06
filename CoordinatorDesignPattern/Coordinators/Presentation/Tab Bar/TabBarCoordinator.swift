@@ -17,7 +17,7 @@ class TabBarCoordinator: Coordinator {
     
     func start() {
         let tabBarController = TabBarController()
-        tabBarController.coordinator = self
+//        tabBarController.coordinator = self
         
         let topRatedNavigationController = UINavigationController()
         topRatedNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag: 0)

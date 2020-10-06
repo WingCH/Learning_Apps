@@ -22,7 +22,9 @@ class StartCoordinator: Coordinator, StartFlow {
     func start() {
         let startViewController = StartViewController()
         startViewController.coordinator = self
-        navigationController.pushViewController(startViewController, animated: true)
+//        navigationController.pushViewController(startViewController, animated: true)
+        navigationController.setViewControllers([startViewController], animated: true)
+        
     }
     
     // MARK: - Flow Methods
