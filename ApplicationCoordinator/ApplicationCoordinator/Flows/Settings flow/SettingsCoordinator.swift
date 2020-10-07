@@ -21,6 +21,13 @@ final class SettingsCoordinator: BaseCoordinator, SettingsCoordinatorOutput {
         settingsFlowOutput.onLogout = { [weak self] in
             self?.finishFlow?()
         }
+        
+        
+        settingsFlowOutput.onItemSelect = { [weak self] (index)  in
+            let itemDetailFlowOutput = ModuleFactoryImp().makeItemDetailOutput(item: ItemList(title: "aaa", subtitle: "bbb"))
+            self?.router.push(itemDetailFlowOutput, hideBottomBar: false)
+        }
+        
         router.setRootModule(settingsFlowOutput)
     }
 }

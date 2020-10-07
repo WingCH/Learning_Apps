@@ -19,6 +19,7 @@ final class AuthCoordinator: BaseCoordinator, AuthCoordinatorOutput {
   
   private func showLogin() {
     let loginOutput = factory.makeLoginOutput()
+    
     loginOutput.onCompleteAuth = { [weak self] in
       self?.finishFlow?()
     }
@@ -36,6 +37,7 @@ final class AuthCoordinator: BaseCoordinator, AuthCoordinatorOutput {
     signUpView?.onTermsButtonTap = { [weak self] in
       self?.showTerms()
     }
+    
     router.push(signUpView)
   }
   

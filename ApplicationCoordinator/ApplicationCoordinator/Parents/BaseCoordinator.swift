@@ -8,7 +8,7 @@ class BaseCoordinator: Coordinator {
   
   func start(with option: DeepLinkOption?) { }
   
-  // add only unique object
+  // keep strong references to all child coordinators
   func addDependency(_ coordinator: Coordinator) {
     guard !childCoordinators.contains(where: { $0 === coordinator }) else { return }
     childCoordinators.append(coordinator)

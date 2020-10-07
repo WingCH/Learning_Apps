@@ -1,7 +1,8 @@
 final class SettingsController: UIViewController, SettingsView {
+    
     //controller handler
     var onLogout: (() -> Void)?
-    
+    var onItemSelect: ((Int) -> ())?
     
     @IBOutlet weak var tableView: UITableView!
     //mock datasource
@@ -33,6 +34,10 @@ final class SettingsController: UIViewController, SettingsView {
 }
 
 extension SettingsController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.onItemSelect?(indexPath.row)
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return settings.count
