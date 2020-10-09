@@ -49,7 +49,7 @@ final class ItemCoordinator: BaseCoordinator {
                 self?.showItemDetail(item)
             }
         }
-        addDependency(coordinator)
+//        addDependency(coordinator)
         router.present(module)
         coordinator.start()
     }
