@@ -121,7 +121,7 @@ example(of: "Single") {
     }
   }
   
-  loadText(from: "ANewHope")
+  loadText(from: "ANewHopse")
     .subscribe {
       switch $0 {
       case .success(let string):
