@@ -72,12 +72,14 @@ class PhotosViewController: UICollectionViewController {
         authorized
             .skipWhile { $0 == false }
             .take(1)
-            .subscribe(onNext: { [weak self] _ in
+            .do(onNext: { [weak self] _ in
+                // run in background thread, so no need write in `subscribe`
                 self?.photos = PhotosViewController.loadPhotos()
+            })
+            .observeOn(MainScheduler.instance) // so ensure `subscribe` run in main thread
+            .subscribe(onNext: { [weak self] _ in
+                self?.collectionView?.reloadData()
                 
-                DispatchQueue.main.async {
-                    self?.collectionView?.reloadData()
-                }
             })
             .disposed(by: disposeBag)
         
