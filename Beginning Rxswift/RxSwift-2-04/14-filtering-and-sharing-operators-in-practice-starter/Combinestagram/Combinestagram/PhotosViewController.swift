@@ -76,7 +76,7 @@ class PhotosViewController: UICollectionViewController {
                 // run in background thread, so no need write in `subscribe`
                 self?.photos = PhotosViewController.loadPhotos()
             })
-            .observeOn(MainScheduler.instance) // so ensure `subscribe` run in main thread
+            .observeOn(MainScheduler.instance) // to ensure `subscribe` run in main thread
             .subscribe(onNext: { [weak self] _ in
                 self?.collectionView?.reloadData()
                 
