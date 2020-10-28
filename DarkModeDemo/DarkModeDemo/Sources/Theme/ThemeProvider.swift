@@ -9,7 +9,7 @@ import UIKit
 protocol ThemeProvider: class {
     // use for set overrideUserInterfaceStyle
     var window: UIWindow { get }
-    var theme: Theme { get }
+    var theme: Theme! { get }
     func register<Observer: Themeable>(observer: Observer)
     func updateThemeStyle(type: ThemeType)
 }
@@ -17,19 +17,27 @@ protocol ThemeProvider: class {
 class LegacyThemeProvider: ThemeProvider {
     var window: UIWindow
     
-    var theme: Theme {
+    var theme: Theme! {
         didSet {
-//            UserDefaults.standard.set(theme == .dark, forKey: "isDark")
+            if #available(iOS 13.0, *) {
+                if theme == .light || theme == .dark{
+                    window.overrideUserInterfaceStyle = .light
+                }else if theme == .adaptive {
+                    window.overrideUserInterfaceStyle = .unspecified
+                }
+            }
             notifyObservers()
         }
     }
     private var observers: NSHashTable<AnyObject> = NSHashTable.weakObjects()
     
     init(window: UIWindow) {
-        self.theme = UserDefaults.standard.bool(forKey: "isDark") ? .dark : .light
+        
         self.window = window
+        // Is it possible to allow didSet to be called during initialization in Swift?
+        // https://stackoverflow.com/a/29501998/5588637
+        ({self.theme = .light })()
     }
-    
     
     func updateThemeStyle(type: ThemeType) {
         switch type {
@@ -59,20 +67,3 @@ class LegacyThemeProvider: ThemeProvider {
         }
     }
 }
-
-//@available(iOS 13.0, *)
-//public class DefaultThemeProvider: NSObject, ThemeProvider {
-//    let theme: Theme = .adaptive
-//    
-//    override init() {
-//        super.init()
-//    }
-//    
-//    func register<Observer: Themeable>(observer: Observer) {
-//        observer.apply(theme: theme)
-//    }
-//    
-//    func toggleTheme() {
-//        assertionFailure("The function \(DefaultThemeProvider.self).\(#function) shouldn't be used!")
-//    }
-//}
