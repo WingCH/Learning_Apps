@@ -6,19 +6,21 @@
 import Foundation
 import UIKit
 
+enum ThemeType {
+    case light
+    case dark
+    @available(iOS 13.0, *)
+    case adaptive
+}
+
 struct Theme: Equatable {
     static let light = Theme(type: .light, colors: .light)
     static let dark = Theme(type: .dark, colors: .dark)
     @available(iOS 13.0, *)
     static let adaptive = Theme(type: .adaptive, colors: .adaptive)
 
-    enum `Type` {
-	    case light
-	    case dark
-	    @available(iOS 13.0, *)
-	    case adaptive
-    }
-    let type: Type
+
+    let type: ThemeType
 
     let backgroundColor: UIColor
     let textColor: UIColor
@@ -32,7 +34,7 @@ struct Theme: Equatable {
 
     let switchTintColor: UIColor
 
-    init(type: Type, colors: ColorPalette) {
+    init(type: ThemeType, colors: ColorPalette) {
 	    self.type = type
 	    self.backgroundColor = colors.background
 	    self.textColor = colors.foreground

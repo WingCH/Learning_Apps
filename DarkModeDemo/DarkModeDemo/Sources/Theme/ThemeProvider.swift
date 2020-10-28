@@ -7,26 +7,43 @@ import Foundation
 import UIKit
 
 protocol ThemeProvider: class {
+    // use for set overrideUserInterfaceStyle
+    var window: UIWindow { get }
     var theme: Theme { get }
     func register<Observer: Themeable>(observer: Observer)
-    func toggleTheme()
+    func updateThemeStyle(type: ThemeType)
 }
 
 class LegacyThemeProvider: ThemeProvider {
+    var window: UIWindow
+    
     var theme: Theme {
         didSet {
-            UserDefaults.standard.set(theme == .dark, forKey: "isDark")
+//            UserDefaults.standard.set(theme == .dark, forKey: "isDark")
             notifyObservers()
         }
     }
     private var observers: NSHashTable<AnyObject> = NSHashTable.weakObjects()
     
-    init() {
+    init(window: UIWindow) {
         self.theme = UserDefaults.standard.bool(forKey: "isDark") ? .dark : .light
+        self.window = window
     }
     
-    func toggleTheme() {
-        theme = theme == .light ? .dark : .light
+    
+    func updateThemeStyle(type: ThemeType) {
+        switch type {
+        case .light:
+            theme = .light
+        case .dark:
+            theme = .dark
+        case .adaptive:
+            if #available(iOS 13.0, *) {
+                theme = .adaptive
+            } else {
+                assertionFailure("The function shouldn't be used if iOS < 13")
+            }
+        }
     }
     
     func register<Observer: Themeable>(observer: Observer) {

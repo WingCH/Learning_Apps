@@ -13,11 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-//        if #available(iOS 13.0, *) {
-//            themeProvider =  DefaultThemeProvider()
-//        } else {
-            themeProvider =  LegacyThemeProvider()
-//        }
+        themeProvider =  LegacyThemeProvider(window: window!)
         
         if let styleableNavigationController = window!.rootViewController as? StyleableNavigationController {
             styleableNavigationController.themeProvider = themeProvider
@@ -28,6 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         return true
+    }
+    
+    @available(iOS 13.0, *)
+    func setUserInterfaceStyle(_ style: UIUserInterfaceStyle) {
+        window?.overrideUserInterfaceStyle = style
     }
     
 }
