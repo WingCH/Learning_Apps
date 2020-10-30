@@ -20,6 +20,7 @@ class LegacyThemeProvider: ThemeProvider {
     var theme: Theme! {
         didSet {
             if #available(iOS 13.0, *) {
+                // iOS 13以上有系統級dark mode, 所以要強制override Style
                 if theme == .light || theme == .dark{
                     window.overrideUserInterfaceStyle = .light
                 }else if theme == .adaptive {
@@ -34,6 +35,7 @@ class LegacyThemeProvider: ThemeProvider {
     init(window: UIWindow) {
         
         self.window = window
+        // 強制觸發 `didSet`
         // Is it possible to allow didSet to be called during initialization in Swift?
         // https://stackoverflow.com/a/29501998/5588637
         ({self.theme = .light })()

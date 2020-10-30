@@ -25,10 +25,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
-    
-    @available(iOS 13.0, *)
-    func setUserInterfaceStyle(_ style: UIUserInterfaceStyle) {
-        window?.overrideUserInterfaceStyle = style
-    }
-    
 }
