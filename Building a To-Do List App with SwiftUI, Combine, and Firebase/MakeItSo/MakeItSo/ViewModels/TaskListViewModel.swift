@@ -8,16 +8,21 @@
 import Foundation
 import Combine
 
-// https://github.com/schmidyy/SwiftUI-ListFetching/issues/3#issuecomment-528673860
 class TaskListViewModel: ObservableObject {
+    @Published var taskRepository = TaskRepository()
     @Published var taskCellViewModels = [TaskCellViewModel]()
     
     private var cancellables = Set<AnyCancellable>()
     
     init() {
-        self.taskCellViewModels = testDataTasks.map({ task in
-            TaskCellViewModel(task: task)
-        })
+        taskRepository.$tasks.map { tasks in
+            tasks.map { task in
+                TaskCellViewModel(task: task)
+            }
+        }
+        .assign(to: \.taskCellViewModels, on: self)
+        .store(in: &cancellables)
+        
     }
     
     func addTask(task: Task) {
