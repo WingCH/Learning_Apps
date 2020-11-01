@@ -22,7 +22,6 @@ class TaskListViewModel: ObservableObject {
         }
         .assign(to: \.taskCellViewModels, on: self)
         .store(in: &cancellables)
-        
     }
     
     func addTask(task: Task) {

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E62D578254E95750004F58C /* SignInWithAppleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E62D577254E95750004F58C /* SignInWithAppleButton.swift */; };
+		0E62D57B254E9A2B0004F58C /* SingInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E62D57A254E9A2B0004F58C /* SingInView.swift */; };
 		0ED49699254C556E00F0A84F /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED49698254C556E00F0A84F /* TaskRepository.swift */; };
 		0EDB106B254BC61E00DE96F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB106A254BC61E00DE96F1 /* AppDelegate.swift */; };
 		0EDB106D254BC61E00DE96F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB106C254BC61E00DE96F1 /* SceneDelegate.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E62D577254E95750004F58C /* SignInWithAppleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleButton.swift; sourceTree = "<group>"; };
+		0E62D57A254E9A2B0004F58C /* SingInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingInView.swift; sourceTree = "<group>"; };
 		0ED49698254C556E00F0A84F /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepository.swift; sourceTree = "<group>"; };
 		0EDB1067254BC61E00DE96F1 /* MakeItSo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MakeItSo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EDB106A254BC61E00DE96F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				0EDB106E254BC61E00DE96F1 /* TaskListView.swift */,
+				0E62D577254E95750004F58C /* SignInWithAppleButton.swift */,
+				0E62D57A254E9A2B0004F58C /* SingInView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -269,12 +275,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E62D578254E95750004F58C /* SignInWithAppleButton.swift in Sources */,
 				0EDB1082254BD74800DE96F1 /* Task.swift in Sources */,
 				0EDB106B254BC61E00DE96F1 /* AppDelegate.swift in Sources */,
 				0EDB106D254BC61E00DE96F1 /* SceneDelegate.swift in Sources */,
 				0EDB106F254BC61E00DE96F1 /* TaskListView.swift in Sources */,
 				0EDB108D254BE48C00DE96F1 /* TaskCellViewModel.swift in Sources */,
 				0EDB1090254BE90D00DE96F1 /* TaskListViewModel.swift in Sources */,
+				0E62D57B254E9A2B0004F58C /* SingInView.swift in Sources */,
 				0ED49699254C556E00F0A84F /* TaskRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,6 +425,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MakeItSo/Preview Content\"";
+				DEVELOPMENT_TEAM = AL869FRMV6;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = MakeItSo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -438,6 +447,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MakeItSo/Preview Content\"";
+				DEVELOPMENT_TEAM = AL869FRMV6;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = MakeItSo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

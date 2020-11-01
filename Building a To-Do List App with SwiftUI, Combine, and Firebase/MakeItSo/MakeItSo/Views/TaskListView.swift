@@ -13,6 +13,7 @@ struct TaskListView: View {
     let tasks = testDataTasks
     
     @State var presentAddNewItem = false
+    @State var showSignInForm = false
     
     var body: some View {
         NavigationView{
@@ -41,7 +42,16 @@ struct TaskListView: View {
                     }
                 }
                 .padding()
+                         
             }
+            .sheet(isPresented: $showSignInForm, content: { 
+                SingInView()
+            })
+            .navigationBarItems(trailing: Button(action: {
+                self.showSignInForm.toggle()
+            }, label: {
+                Image(systemName: "person.circle")
+            }))
             .navigationTitle("Tasks")
         }
         
