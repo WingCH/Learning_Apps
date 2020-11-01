@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E10413F254EA94F00233EF5 /* SignInWithAppleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E10413E254EA94F00233EF5 /* SignInWithAppleCoordinator.swift */; };
 		0E62D578254E95750004F58C /* SignInWithAppleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E62D577254E95750004F58C /* SignInWithAppleButton.swift */; };
 		0E62D57B254E9A2B0004F58C /* SingInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E62D57A254E9A2B0004F58C /* SingInView.swift */; };
 		0ED49699254C556E00F0A84F /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED49698254C556E00F0A84F /* TaskRepository.swift */; };
@@ -24,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E10413E254EA94F00233EF5 /* SignInWithAppleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleCoordinator.swift; sourceTree = "<group>"; };
+		0E104141254EACD100233EF5 /* MakeItSo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MakeItSo.entitlements; sourceTree = "<group>"; };
 		0E62D577254E95750004F58C /* SignInWithAppleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleButton.swift; sourceTree = "<group>"; };
 		0E62D57A254E9A2B0004F58C /* SingInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingInView.swift; sourceTree = "<group>"; };
 		0ED49698254C556E00F0A84F /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepository.swift; sourceTree = "<group>"; };
@@ -56,6 +59,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E10413D254EA88800233EF5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0E10413E254EA94F00233EF5 /* SignInWithAppleCoordinator.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		0ED49697254C553100F0A84F /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
@@ -85,7 +96,9 @@
 		0EDB1069254BC61E00DE96F1 /* MakeItSo */ = {
 			isa = PBXGroup;
 			children = (
+				0E104141254EACD100233EF5 /* MakeItSo.entitlements */,
 				0EDB1085254BD7D700DE96F1 /* App */,
+				0E10413D254EA88800233EF5 /* Services */,
 				0ED49697254C553100F0A84F /* Repositories */,
 				0EDB107F254BC74000DE96F1 /* Model */,
 				0EDB108A254BE46B00DE96F1 /* ViewModels */,
@@ -275,6 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E10413F254EA94F00233EF5 /* SignInWithAppleCoordinator.swift in Sources */,
 				0E62D578254E95750004F58C /* SignInWithAppleButton.swift in Sources */,
 				0EDB1082254BD74800DE96F1 /* Task.swift in Sources */,
 				0EDB106B254BC61E00DE96F1 /* AppDelegate.swift in Sources */,
@@ -423,6 +437,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MakeItSo/MakeItSo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MakeItSo/Preview Content\"";
 				DEVELOPMENT_TEAM = AL869FRMV6;
@@ -445,6 +460,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MakeItSo/MakeItSo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MakeItSo/Preview Content\"";
 				DEVELOPMENT_TEAM = AL869FRMV6;
