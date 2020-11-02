@@ -13,9 +13,21 @@ struct Sidebar: View {
             #if os(iOS)
             content
                 .navigationTitle("Learn")
+                .toolbar(content: {
+                    ToolbarItem(placement: .navigationBarTrailing){
+                        Image(systemName: "person.crop.circle")
+                    }
+                })
             #else
             content
                 .frame(minWidth: 200, idealWidth: 250, maxWidth: 300)
+                .toolbar(content: {
+                    ToolbarItem(placement: .automatic){
+                        Button(action: {}){
+                            Image(systemName: "person.crop.circle")
+                        }
+                    }
+                })
             #endif
             CoursesView()
         }
@@ -31,7 +43,7 @@ struct Sidebar: View {
             Label("Livestreams", systemImage: "tv")
             Label("Certificates", systemImage: "mail.stack")
             Label("Search", systemImage: "magnifyingglass")
-
+            
         }
         .listStyle(SidebarListStyle())
         
