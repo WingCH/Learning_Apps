@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct CoursesView: View {
-    @State var show = false
     @Namespace var namespace
+    @State var selectedItem: Course? = nil
+    @State var isDisable = false
     
     var body: some View {
         ZStack {
@@ -17,19 +18,35 @@ struct CoursesView: View {
                 VStack(spacing: 20) {
                     ForEach(courses) { item in
                         CourseItem(course: item)
-                            .matchedGeometryEffect(id: item.id, in: namespace, isSource: !show)
+                            .matchedGeometryEffect(id: item.id, in: namespace, isSource: selectedItem != item)
                             .frame(width: 335, height: 250, alignment: .center)
+                            .onTapGesture {
+                                withAnimation(.spring()) {
+                                    selectedItem = item
+                                    isDisable = true
+                                }
+                            }
+                            .disabled(isDisable)
                     }
-
+                    
                 }
                 .frame(maxWidth: .infinity)
             }
             
-            if show {
+            if selectedItem != nil {
                 ScrollView {
-                    CourseItem(course: courses[0])
-                        .matchedGeometryEffect(id: courses[0].id, in: namespace)
+                    CourseItem(course: selectedItem!)
+                        .matchedGeometryEffect(id: selectedItem!.id, in: namespace)
                         .frame(height: 300)
+                        .onTapGesture {
+                            withAnimation(.spring()) {
+                                selectedItem = nil
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                    isDisable = false
+                                }
+                                
+                            }
+                        }
                     VStack {
                         ForEach(0 ..< 20) { item in
                             CourseRow()
@@ -50,12 +67,6 @@ struct CoursesView: View {
                 )
                 .edgesIgnoringSafeArea(.all)
             }
-        }
-        .onTapGesture {
-            withAnimation(.spring()) {
-                show.toggle()
-            }
-            
         }
         //        .animation(.spring())
     }

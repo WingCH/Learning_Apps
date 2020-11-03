@@ -80,6 +80,14 @@
 			path = Items;
 			sourceTree = "<group>";
 		};
+		0EDB532E2551A0AC000970BF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0EDB5329255198CE000970BF /* Course.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		9689EEF324BF5F98005DC84C = {
 			isa = PBXGroup;
 			children = (
@@ -95,11 +103,11 @@
 			children = (
 				9689EEF924BF5F98005DC84C /* DesignCodeCourseApp.swift */,
 				0E08CDF9254FFA70005D2261 /* Navigation */,
+				0EDB532E2551A0AC000970BF /* Model */,
 				0E08CDFC254FFA85005D2261 /* Items */,
 				0E104148254ED38700233EF5 /* CoursesView.swift */,
 				0E08CDFF254FFB1C005D2261 /* CourseList.swift */,
 				9689EEFB24BF5F9A005DC84C /* Assets.xcassets */,
-				0EDB5329255198CE000970BF /* Course.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
