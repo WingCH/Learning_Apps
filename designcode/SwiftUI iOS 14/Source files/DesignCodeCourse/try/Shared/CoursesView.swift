@@ -20,29 +20,49 @@ struct CoursesView: View {
                     spacing: 16
                 ) {
                     ForEach(courses) { item in
-                        CourseItem(course: item)
-                            .matchedGeometryEffect(id: item.id, in: namespace, isSource: selectedItem != item)
-                            .frame(height: 200, alignment: .center)
-                            .onTapGesture {
-                                withAnimation(.spring()) {
-                                    selectedItem = item
-                                    isDisable = true
+                        VStack {
+                            CourseItem(course: item)
+                                .matchedGeometryEffect(id: item.id, in: namespace, isSource: selectedItem != item)
+                                .frame(height: 200, alignment: .center)
+                                .onTapGesture {
+                                    withAnimation(.spring(response: 0.5, dampingFraction: 0.7, blendDuration: 0))  {
+                                        selectedItem = item
+                                        isDisable = true
+                                    }
                                 }
-                            }
-                            .disabled(isDisable)
+                                .disabled(isDisable)
+                        }
+                        .matchedGeometryEffect(id: "container\(item.id)", in: namespace, isSource: selectedItem != item)
                     }
                     
                 }
                 .padding(16)
                 .frame(maxWidth: .infinity)
-            }
-//            .edgesIgnoringSafeArea(.all) 
+            }.zIndex(1)
             
             if selectedItem != nil {
-                ScrollView {
-                    CourseItem(course: selectedItem!)
-                        .matchedGeometryEffect(id: selectedItem!.id, in: namespace)
-                        .frame(height: 300)
+                ZStack(alignment: .topTrailing) {
+                    
+                    VStack {
+                        ScrollView {
+                            CourseItem(course: selectedItem!)
+                                .matchedGeometryEffect(id: selectedItem!.id, in: namespace)
+                                .frame(height: 300)
+                            VStack {
+                                ForEach(0 ..< 20) { item in
+                                    CourseRow()
+                                }
+                            }
+                            .padding()
+                        }
+                    }
+                    .background(Color("Background 1"))
+                    .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
+                    .matchedGeometryEffect(id: "container\(selectedItem!.id)", in: namespace)
+                    .edgesIgnoringSafeArea(.all)
+                    
+                    CloseButton()
+                        .padding(.trailing, 16)
                         .onTapGesture {
                             withAnimation(.spring()) {
                                 selectedItem = nil
@@ -52,25 +72,8 @@ struct CoursesView: View {
                                 
                             }
                         }
-                    VStack {
-                        ForEach(0 ..< 20) { item in
-                            CourseRow()
-                        }
-                    }
-                    .padding()
                 }
-                .background(Color("Background 1"))
-                .transition(
-                    .asymmetric(
-                        insertion: AnyTransition
-                            .opacity
-                            .animation(Animation.spring().delay(0.3)),
-                        removal: AnyTransition
-                            .opacity
-                            .animation(Animation.spring())
-                    )
-                )
-                .edgesIgnoringSafeArea(.all)
+                .zIndex(2)
             }
         }
         //        .animation(.spring())
