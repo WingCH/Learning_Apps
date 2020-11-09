@@ -54,6 +54,7 @@ struct CountriesList: View {
 
 private extension CountriesList {
     var notRequestedView: some View {
+        // start get data point
         Text("").onAppear(perform: self.viewModel.reloadCountries)
     }
     

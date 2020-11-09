@@ -48,7 +48,10 @@ struct RealCountriesService: CountriesService {
             .flatMap { [dbRepository] in
                 dbRepository.countries(search: search, locale: locale)
             }
-            .sinkToLoadable { countries.wrappedValue = $0 }
+            .sinkToLoadable {
+                countries.wrappedValue = $0
+                
+            }
             .store(in: cancelBag)
     }
     
@@ -76,7 +79,10 @@ struct RealCountriesService: CountriesService {
                     return self.loadAndStoreCountryDetailsFromWeb(country: country)
                 }
             }
-            .sinkToLoadable { countryDetails.wrappedValue = $0.unwrap() }
+            .sinkToLoadable {
+                countryDetails.wrappedValue = $0.unwrap()
+                
+            }
             .store(in: cancelBag)
     }
     

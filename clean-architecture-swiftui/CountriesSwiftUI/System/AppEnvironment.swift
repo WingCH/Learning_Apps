@@ -107,15 +107,3 @@ extension AppEnvironment {
                      userPermissionsService: userPermissionsService)
     }
 }
-
-extension DIContainer {
-    struct WebRepositories {
-        let imageRepository: ImageWebRepository
-        let countriesRepository: CountriesWebRepository
-        let pushTokenWebRepository: PushTokenWebRepository
-    }
-    
-    struct DBRepositories {
-        let countriesRepository: CountriesDBRepository
-    }
-}

@@ -42,6 +42,7 @@ extension ContentView {
             self.isRunningTests = isRunningTests
         }
         
+        // if EnvironmentValues change
         var onChangeHandler: (EnvironmentValues.Diff) -> Void {
             return { diff in
                 if !diff.isDisjoint(with: [.locale, .sizeCategory]) {
