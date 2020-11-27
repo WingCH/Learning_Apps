@@ -12,34 +12,27 @@ import Backend
 struct MovieTopBackdropImage : View {
     @ObservedObject var imageLoader: ImageLoader
     @State var isImageLoaded = false
-    @Binding var isExpanded: Bool
     
-    var forceBlur: Bool = false
     var fill: Bool = false
-    var height: CGFloat = 250
-    
-    private let threeshold: CGFloat = 50
-    private let maxBlur: CGFloat = 100
-      
+    var height: CGFloat = 220
+          
     var body: some View {
-        Group {
-            if self.imageLoader.image != nil {
-                Image(uiImage: self.imageLoader.image!)
-                    .resizable()
-                    .blur(radius: isExpanded ? 0 : 50, opaque: true)
-                    .opacity(self.isImageLoaded ? 1 : 0)
-                    .onAppear{
-                        self.isImageLoaded = true
-                    }.onTapGesture {
-                        self.isExpanded.toggle()
-                    }
-                    .aspectRatio(contentMode: .fit)
-                    .animation(.easeInOut)
-            } else {
-                Rectangle()
-                    .foregroundColor(.gray)
-                    .opacity(0.1)
-            }
-        }.frame(maxHeight: fill ? 50 : height)
+        if let image = imageLoader.image {
+            Image(uiImage: image)
+                .resizable()
+                .blur(radius: 50, opaque: true)
+                .opacity(isImageLoaded ? 1 : 0)
+                .aspectRatio(contentMode: .fill)
+                .overlay(Color.black.opacity(0.3))
+                .frame(height: fill ? 50 : height)
+                .onAppear{
+                    isImageLoaded = true
+                }
+        } else {
+            Rectangle()
+                .foregroundColor(.gray)
+                .opacity(0.1)
+                .frame(height: fill ? 50 : height)
+        }
     }
 }
