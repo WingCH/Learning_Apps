@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0EFEDCC62573BE9000357D3B /* HTTPNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFEDCC52573BE9000357D3B /* HTTPNetworking.swift */; };
 		0EFEDCCC2573C1CE00357D3B /* BitcoinPriceFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFEDCCB2573C1CE00357D3B /* BitcoinPriceFetcher.swift */; };
+		0EFEDCD02573C97A00357D3B /* SwinjectStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFEDCCF2573C97A00357D3B /* SwinjectStoryboard+Extension.swift */; };
 		2C5077AAAC85C7831FA8CD15 /* Pods_Bitcoin_Adventurer_Bitcoin_Adventurer_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBDAD690153818F33CB3A344 /* Pods_Bitcoin_Adventurer_Bitcoin_Adventurer_Tests.framework */; };
 		733E0F188EDF2FED6CFE3240 /* Pods_Bitcoin_Adventurer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 063BB4E3376AFF7E31281C9C /* Pods_Bitcoin_Adventurer.framework */; };
 		8714602E1FF2FB41001F9EB5 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8714602D1FF2FB41001F9EB5 /* Endpoint.swift */; };
@@ -42,6 +43,7 @@
 		0E41ABE2A875AB9A7AADA440 /* Pods-Bitcoin Adventurer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bitcoin Adventurer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bitcoin Adventurer/Pods-Bitcoin Adventurer.debug.xcconfig"; sourceTree = "<group>"; };
 		0EFEDCC52573BE9000357D3B /* HTTPNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPNetworking.swift; sourceTree = "<group>"; };
 		0EFEDCCB2573C1CE00357D3B /* BitcoinPriceFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinPriceFetcher.swift; sourceTree = "<group>"; };
+		0EFEDCCF2573C97A00357D3B /* SwinjectStoryboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwinjectStoryboard+Extension.swift"; sourceTree = "<group>"; };
 		8714602D1FF2FB41001F9EB5 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Endpoint.swift; path = Model/Endpoint.swift; sourceTree = "<group>"; };
 		8738EDBD1FE59A31000CBC22 /* Bitcoin Adventurer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bitcoin Adventurer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8738EDC01FE59A31000CBC22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				87CED55B1FE753EF00C4D66E /* ViewControllers */,
 				87CED55A1FE753B200C4D66E /* Model */,
 				87CED55D1FE7542400C4D66E /* Other */,
+				0EFEDCCF2573C97A00357D3B /* SwinjectStoryboard+Extension.swift */,
 			);
 			path = "Bitcoin Adventurer";
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EFEDCD02573C97A00357D3B /* SwinjectStoryboard+Extension.swift in Sources */,
 				0EFEDCCC2573C1CE00357D3B /* BitcoinPriceFetcher.swift in Sources */,
 				87CED5611FE754DB00C4D66E /* PriceResponse.swift in Sources */,
 				8738EDC31FE59A31000CBC22 /* BitcoinViewController.swift in Sources */,
