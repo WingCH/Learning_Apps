@@ -39,6 +39,24 @@ class BasicTests: XCTestCase {
   
   override func setUp() {
     super.setUp()
+    // register the Currency type to always return USD
+    container.register(Currency.self){ _ in .USD}
+    // You register the CryptoCurrency type to always return BTC
+    container.register(CryptoCurrency.self) { _  in .BTC }
+
+    // Register the Price type which in itself has two dependencies. To create these dependencies, ask the provided resolver to create them by using resolve(_:).
+    container.register(Price.self) { resolver in
+      let crypto = resolver.resolve(CryptoCurrency.self)!
+      let currency = resolver.resolve(Currency.self)!
+      return Price(base: crypto, amount: "999456", currency: currency)
+    }
+
+    // register the PriceResponse type and resolve a Price dependency needed to create it.
+    container.register(PriceResponse.self) { resolver in
+      let price = resolver.resolve(Price.self)!
+      return PriceResponse(data: price, warnings: nil)
+    }
+
   }
   
   override func tearDown() {
@@ -49,7 +67,8 @@ class BasicTests: XCTestCase {
   // MARK: - Tests
   
   func testPriceResponseData() {
-    XCTFail("Test not yet written.")
+    let response = container.resolve(PriceResponse.self)!
+    XCTAssertEqual(response.data.amount, "999456")
   }
   
 }
