@@ -12,6 +12,7 @@
 		0ED8041B2583BD3200EF7082 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ED8041A2583BD3200EF7082 /* Assets.xcassets */; };
 		0ED8041E2583BD3200EF7082 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ED8041D2583BD3200EF7082 /* Preview Assets.xcassets */; };
 		0ED804282583BD8300EF7082 /* AlignmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED804272583BD8300EF7082 /* AlignmentControl.swift */; };
+		0ED8042C2583C1D200EF7082 /* CustomTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED8042B2583C1D100EF7082 /* CustomTabbar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		0ED8041D2583BD3200EF7082 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0ED8041F2583BD3200EF7082 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0ED804272583BD8300EF7082 /* AlignmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignmentControl.swift; sourceTree = "<group>"; };
+		0ED8042B2583C1D100EF7082 /* CustomTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				0ED804272583BD8300EF7082 /* AlignmentControl.swift */,
+				0ED8042B2583C1D100EF7082 /* CustomTabbar.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0ED8042C2583C1D200EF7082 /* CustomTabbar.swift in Sources */,
 				0ED804192583BD2F00EF7082 /* ContentView.swift in Sources */,
 				0ED804172583BD2F00EF7082 /* SwiftUI_ComponentApp.swift in Sources */,
 				0ED804282583BD8300EF7082 /* AlignmentControl.swift in Sources */,
