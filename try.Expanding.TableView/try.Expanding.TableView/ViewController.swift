@@ -77,12 +77,14 @@ class ViewController: UITableViewController {
             if tableViewData[indexPath.section].opened == true {
                 tableViewData[indexPath.section].opened = false
                 let sections = IndexSet.init(integer: indexPath.section)
-                tableView.reloadSections(sections, with: .none)
+                tableView.reloadSections(sections, with: .fade)
+
 
             }else{
                 tableViewData[indexPath.section].opened = true
                 let sections = IndexSet.init(integer: indexPath.section)
-                tableView.reloadSections(sections, with: .none)
+                tableView.reloadSections(sections, with: .fade)
+               
             }
         }
     }
