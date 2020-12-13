@@ -24,7 +24,22 @@ class ViewController: UITableViewController {
         tableViewData = [CellData(opened: false, title: "Title1", sectionData: ["Cell1","Cell2","Cell3"]),
                          CellData(opened: false, title: "Title2", sectionData: ["Cell1","Cell2","Cell3"]),
                          CellData(opened: false, title: "Title3", sectionData: ["Cell1","Cell2","Cell3"]),
-                         CellData(opened: false, title: "Title4", sectionData: ["Cell1","Cell2","Cell3"])]
+                         CellData(opened: false, title: "Title4", sectionData: ["Cell1","Cell2","Cell3"]),
+                         CellData(opened: false, title: "Title4", sectionData: ["Cell1","Cell2","Cell3"]),
+                         CellData(opened: false, title: "Title4", sectionData: ["Cell1","Cell2","Cell3"]),
+                         CellData(opened: false, title: "Title4", sectionData: ["Cell1","Cell2","Cell3"]),
+                         CellData(opened: false, title: "Title4", sectionData: ["Cell1","Cell2","Cell3"]),
+                         CellData(opened: false, title: "Title4", sectionData: ["Cell1","Cell2","Cell3"]),
+                         CellData(opened: false, title: "Title4", sectionData: ["Cell1","Cell2","Cell3"]),
+                         CellData(opened: false, title: "Title4", sectionData: ["Cell1","Cell2","Cell3"]),
+                         CellData(opened: false, title: "Title4", sectionData: ["Cell1","Cell2","Cell3"]),
+                         CellData(opened: false, title: "Title4", sectionData: ["Cell1","Cell2","Cell3"]),
+                         CellData(opened: false, title: "Title4", sectionData: ["Cell1","Cell2","Cell3"]),
+                         CellData(opened: false, title: "Title4", sectionData: ["Cell1","Cell2","Cell3"]),
+                         CellData(opened: false, title: "Title4", sectionData: ["Cell1","Cell2","Cell3"]),
+                         CellData(opened: false, title: "Title4", sectionData: ["Cell1","Cell2","Cell3"]),
+                         CellData(opened: false, title: "Title4", sectionData: ["Cell1","Cell2","Cell3"])
+        ]
     }
 
 
@@ -71,5 +86,21 @@ class ViewController: UITableViewController {
             }
         }
     }
+
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView()
+        view.backgroundColor = .red
+        return view
+    }
+
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let view = UIView()
+        view.backgroundColor = .blue
+        return view
+    }
+
+//    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+//        return 10
+//    }
 }
 

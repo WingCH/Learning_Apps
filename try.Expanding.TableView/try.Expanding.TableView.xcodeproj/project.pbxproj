@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0EFEDD162579052B00357D3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFEDD152579052B00357D3B /* AppDelegate.swift */; };
-		0EFEDD182579052B00357D3B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFEDD172579052B00357D3B /* SceneDelegate.swift */; };
 		0EFEDD1A2579052B00357D3B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFEDD192579052B00357D3B /* ViewController.swift */; };
 		0EFEDD1D2579052B00357D3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EFEDD1B2579052B00357D3B /* Main.storyboard */; };
 		0EFEDD1F2579052D00357D3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EFEDD1E2579052D00357D3B /* Assets.xcassets */; };
@@ -18,7 +17,6 @@
 /* Begin PBXFileReference section */
 		0EFEDD122579052B00357D3B /* try.Expanding.TableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = try.Expanding.TableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EFEDD152579052B00357D3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0EFEDD172579052B00357D3B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0EFEDD192579052B00357D3B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0EFEDD1C2579052B00357D3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0EFEDD1E2579052D00357D3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,7 +55,6 @@
 			isa = PBXGroup;
 			children = (
 				0EFEDD152579052B00357D3B /* AppDelegate.swift */,
-				0EFEDD172579052B00357D3B /* SceneDelegate.swift */,
 				0EFEDD192579052B00357D3B /* ViewController.swift */,
 				0EFEDD1B2579052B00357D3B /* Main.storyboard */,
 				0EFEDD1E2579052D00357D3B /* Assets.xcassets */,
@@ -139,7 +136,6 @@
 			files = (
 				0EFEDD1A2579052B00357D3B /* ViewController.swift in Sources */,
 				0EFEDD162579052B00357D3B /* AppDelegate.swift in Sources */,
-				0EFEDD182579052B00357D3B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +284,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = try.Expanding.TableView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,6 +303,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = try.Expanding.TableView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
