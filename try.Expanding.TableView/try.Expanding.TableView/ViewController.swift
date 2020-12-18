@@ -84,7 +84,7 @@ class ViewController: UITableViewController {
                 tableViewData[indexPath.section].opened = true
                 let sections = IndexSet.init(integer: indexPath.section)
                 tableView.reloadSections(sections, with: .fade)
-               
+
             }
         }
     }
@@ -101,8 +101,8 @@ class ViewController: UITableViewController {
         return view
     }
 
-//    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-//        return 10
-//    }
+    //    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    //        return 10
+    //    }
 }
 
