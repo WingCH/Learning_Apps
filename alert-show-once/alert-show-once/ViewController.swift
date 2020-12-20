@@ -23,18 +23,17 @@ class ViewController: UIViewController {
     func showAlert(){
         let alertController = UIAlertController(title: "Error", message: "message", preferredStyle: UIAlertController.Style.alert)
         alertController.addAction(UIAlertAction(title: "Close", style: UIAlertAction.Style.cancel, handler: { _ in
-            
+            print("closed")
         }))
-        alertController.presentInOwnWindow(animated: true, completion: nil)
+        alertController.presentInOwnWindow(showOnceOnly: true, animated: true, completion: nil)
     }
 }
 
 
 extension UIAlertController {
-    
-    func presentInOwnWindow(animated: Bool, completion: (() -> Void)?) {
+    func presentInOwnWindow(showOnceOnly: Bool, animated: Bool, completion: (() -> Void)?) {
         
         let windowAlertPresentationController = WindowAlertPresentationController(alert: self)
-        windowAlertPresentationController.present(showOnceOnly: true, animated: animated, completion: completion)
+        windowAlertPresentationController.present(showOnceOnly: showOnceOnly, animated: animated, completion: completion)
     }
 }
