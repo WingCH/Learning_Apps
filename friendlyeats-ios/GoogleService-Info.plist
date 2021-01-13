@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>306265748193-u15dr9k420tcm7nlsaav9jft9vea63j2.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.306265748193-u15dr9k420tcm7nlsaav9jft9vea63j2</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB3UnUexFXChhk1VFqGL70Q6wHffWAWLAk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>306265748193</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.firebase.FriendlyEats</string>
+	<key>PROJECT_ID</key>
+	<string>quotes-1604023917950</string>
+	<key>STORAGE_BUCKET</key>
+	<string>quotes-1604023917950.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:306265748193:ios:861efd26f4399fb4303da0</string>
+	<key>DATABASE_URL</key>
+	<string>https://quotes-1604023917950.firebaseio.com</string>
+</dict>
+</plist>
