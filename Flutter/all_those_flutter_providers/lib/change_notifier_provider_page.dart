@@ -7,7 +7,7 @@ class ChangeNotifierProviderPage extends StatelessWidget {
     return ChangeNotifierProvider<ChangeNotifierProviderPageModel>(
       create: (context) => ChangeNotifierProviderPageModel(),
       child: Scaffold(
-        appBar: AppBar(title: Text('My App')),
+        appBar: AppBar(title: Text('ChangeNotifierProvider Example')),
         body: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[

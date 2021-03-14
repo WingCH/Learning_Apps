@@ -7,7 +7,7 @@ class ProviderPage extends StatelessWidget {
     return Provider<ProviderPageModel>(
       create: (context) => ProviderPageModel(),
       child: Scaffold(
-        appBar: AppBar(title: Text('My App')),
+        appBar: AppBar(title: Text('Provider Example')),
         body: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
