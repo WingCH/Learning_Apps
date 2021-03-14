@@ -1,3 +1,4 @@
+import 'package:all_those_flutter_providers/change_notifier_provider_page.dart';
 import 'package:all_those_flutter_providers/provider_page.dart';
 import 'package:flutter/material.dart';
 
@@ -38,17 +39,31 @@ class HomePage extends StatelessWidget {
       body: ListView(
         children: <Widget>[
           ListTile(
-            title: Text('I\'m dedicating every day to you'),
+            title: Text('Provider'),
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) {
-                  return ProviderPage();
-                }),
+                MaterialPageRoute(
+                  builder: (context) {
+                    return ProviderPage();
+                  },
+                ),
               );
             },
           ),
-          ListTile(title: Text('I\'m dedicating every day to you')),
+          ListTile(
+            title: Text('ChangeNotifierProvider'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return ChangeNotifierProviderPage();
+                  },
+                ),
+              );
+            },
+          ),
           ListTile(title: Text('I\'m dedicating every day to you')),
           ListTile(title: Text('I\'m dedicating every day to you')),
           ListTile(title: Text('I\'m dedicating every day to you')),

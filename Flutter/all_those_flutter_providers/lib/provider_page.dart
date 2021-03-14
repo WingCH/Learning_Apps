@@ -4,8 +4,8 @@ import 'package:provider/provider.dart';
 class ProviderPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Provider<MyModel>(
-      create: (context) => MyModel(),
+    return Provider<ProviderPageModel>(
+      create: (context) => ProviderPageModel(),
       child: Scaffold(
         appBar: AppBar(title: Text('My App')),
         body: Row(
@@ -14,13 +14,11 @@ class ProviderPage extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(20),
               color: Colors.green[200],
-              child: Consumer<MyModel>(
-                //                    <--- Consumer
+              child: Consumer<ProviderPageModel>(
                 builder: (context, myModel, child) {
                   return ElevatedButton(
                     child: Text('Do something'),
                     onPressed: () {
-                      // We have access to the model.
                       myModel.doSomething();
                     },
                   );
@@ -30,8 +28,7 @@ class ProviderPage extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(35),
               color: Colors.blue[200],
-              child: Consumer<MyModel>(
-                //                    <--- Consumer
+              child: Consumer<ProviderPageModel>(
                 builder: (context, myModel, child) {
                   return Text(myModel.someValue);
                 },
@@ -44,8 +41,7 @@ class ProviderPage extends StatelessWidget {
   }
 }
 
-class MyModel {
-  //                                               <--- MyModel
+class ProviderPageModel {
   String someValue = 'Hello';
 
   void doSomething() {
