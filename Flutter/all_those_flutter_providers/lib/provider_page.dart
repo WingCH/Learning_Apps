@@ -17,7 +17,7 @@ class ProviderPage extends StatelessWidget {
               child: Consumer<MyModel>(
                 //                    <--- Consumer
                 builder: (context, myModel, child) {
-                  return RaisedButton(
+                  return ElevatedButton(
                     child: Text('Do something'),
                     onPressed: () {
                       // We have access to the model.
