@@ -1,4 +1,5 @@
 import 'package:all_those_flutter_providers/change_notifier_provider_page.dart';
+import 'package:all_those_flutter_providers/future_provider_page.dart';
 import 'package:all_those_flutter_providers/provider_page.dart';
 import 'package:flutter/material.dart';
 
@@ -64,7 +65,19 @@ class HomePage extends StatelessWidget {
               );
             },
           ),
-          ListTile(title: Text('I\'m dedicating every day to you')),
+          ListTile(
+            title: Text('FutureProvider'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return FutureProviderPage();
+                  },
+                ),
+              );
+            },
+          ),
           ListTile(title: Text('I\'m dedicating every day to you')),
           ListTile(title: Text('I\'m dedicating every day to you')),
         ],
