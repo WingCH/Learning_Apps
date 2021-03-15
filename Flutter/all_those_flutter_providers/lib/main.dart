@@ -2,6 +2,7 @@ import 'package:all_those_flutter_providers/change_notifier_provider_page.dart';
 import 'package:all_those_flutter_providers/future_provider_page.dart';
 import 'package:all_those_flutter_providers/multi_provider_page.dart';
 import 'package:all_those_flutter_providers/provider_page.dart';
+import 'package:all_those_flutter_providers/proxy_provider_page.dart';
 import 'package:all_those_flutter_providers/stream_provider_page.dart';
 import 'package:flutter/material.dart';
 
@@ -101,6 +102,19 @@ class HomePage extends StatelessWidget {
                 MaterialPageRoute(
                   builder: (context) {
                     return MultiProviderPage();
+                  },
+                ),
+              );
+            },
+          ),
+          ListTile(
+            title: Text('ProxyProviderPage'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return ProxyProviderPage();
                   },
                 ),
               );
