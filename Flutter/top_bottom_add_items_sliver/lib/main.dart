@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:top_bottom_add_items_sliver/add_items_on_top_and_bottom_of_sliver_page.dart';
+import 'package:top_bottom_add_items_sliver/scroll_to_the_top_to_refresh_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -52,7 +53,14 @@ class _Content extends StatelessWidget {
           ListTile(
             title: Text('Scrollable example with SliverAppBar'),
             enableFeedback: true,
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ScrollToTheTopToRefreshPage(),
+                ),
+              );
+            },
           ),
         ],
       ),
