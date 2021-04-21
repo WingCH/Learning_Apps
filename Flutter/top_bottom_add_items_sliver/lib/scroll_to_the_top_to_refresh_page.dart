@@ -2,6 +2,11 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+/*
+ https://github.com/flutter/flutter/issues/21541#issuecomment-639811289
+ https://dartpad.dartlang.org/38a9320bb8edd30af3c8543c24df8a21
+ */
+
 class ScrollToTheTopToRefreshPage extends StatefulWidget {
   ScrollToTheTopToRefreshPage({Key key}) : super(key: key);
 
