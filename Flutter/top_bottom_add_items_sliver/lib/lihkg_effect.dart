@@ -5,6 +5,7 @@ https://github.com/flutter/flutter/issues/21541#issuecomment-629121578
 https://dartpad.dartlang.org/c3b9b03925cdaaf88c1b8fe78a3b96b0
  */
 
+// TODO: study PullToRefreshAppbar && loading_more_list
 class LihkgEffectPagePage extends StatefulWidget {
   LihkgEffectPagePage({Key key}) : super(key: key);
 
