@@ -6,14 +6,14 @@ https://dartpad.dartlang.org/c3b9b03925cdaaf88c1b8fe78a3b96b0
  */
 
 // TODO: study PullToRefreshAppbar && loading_more_list
-class LihkgEffectPagePage extends StatefulWidget {
-  LihkgEffectPagePage({Key key}) : super(key: key);
+class LihkgEffectPage extends StatefulWidget {
+  LihkgEffectPage({Key key}) : super(key: key);
 
   @override
-  _LihkgEffectPagePageState createState() => _LihkgEffectPagePageState();
+  _LihkgEffectPageState createState() => _LihkgEffectPageState();
 }
 
-class _LihkgEffectPagePageState extends State<LihkgEffectPagePage> {
+class _LihkgEffectPageState extends State<LihkgEffectPage> {
   ScrollController _scrollController = ScrollController();
   List<int> top = [];
   List<int> bottom = List<int>.generate(10, (int index) => 50 + index);

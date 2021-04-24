@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:top_bottom_add_items_sliver/add_items_on_top_and_bottom_of_sliver_page.dart';
 import 'package:top_bottom_add_items_sliver/lihkg_effect.dart';
+import 'package:top_bottom_add_items_sliver/lihkg_effect_with_library.dart';
 import 'package:top_bottom_add_items_sliver/scroll_to_the_top_to_refresh_page.dart';
 
 void main() {
@@ -70,7 +71,19 @@ class _Content extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => LihkgEffectPagePage(),
+                  builder: (context) => LihkgEffectPage(),
+                ),
+              );
+            },
+          ),
+          ListTile(
+            title: Text('Lihkg Effect with Library'),
+            enableFeedback: true,
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => LihkgEffectWithLibraryPage(),
                 ),
               );
             },
