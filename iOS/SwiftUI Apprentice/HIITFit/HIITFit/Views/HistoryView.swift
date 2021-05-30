@@ -32,32 +32,52 @@
 
 import SwiftUI
 
-struct HeaderView: View {
-    let titleText: String
-    
+struct HistoryView: View {
+    let today = Date()
+    let yesterday = Date().addingTimeInterval(-86400)
+
+    let exercises1 = ["Squat", "Step Up", "Burpee", "Sun Salute"]
+    let exercises2 = ["Squat", "Step Up", "Burpee"]
+
     var body: some View {
-        VStack {
-            Text(titleText)
-                .font(.largeTitle)
-            HStack {
-                Image(systemName: "hand.wave")
-                Image(systemName: "2.circle")
-                Image(systemName: "3.circle")
-                Image(systemName: "4.circle")
+        ZStack(alignment: .topTrailing) {
+            Button(action: {}) {
+                Image(systemName: "xmark.circle")
             }
-            .font(.title2)
+            .font(.title)
+            .padding(.trailing)
+
+            VStack {
+                Text("History")
+                    .font(.title)
+                    .padding()
+                Form {
+                    Section(
+                        header:
+                            Text(today.formatted(as: "MMM d"))
+                            .font(.headline)) {
+                        ForEach(exercises1, id: \.self) { exercise in
+                            Text(exercise)
+                        }
+                    }
+                    Section(
+                        header:
+                            Text(yesterday.formatted(as: "MMM d"))
+                            .font(.headline)) {
+                        ForEach(exercises2, id: \.self) { exercise in
+                            Text(exercise)
+                        }
+                    }
+                }
+            }
+            
         }
+
     }
 }
 
-struct HeaderView_Previews: PreviewProvider {
+struct HistoryView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            HeaderView(titleText: "Squat")
-                .previewLayout(/*@START_MENU_TOKEN@*/.sizeThatFits/*@END_MENU_TOKEN@*/)
-            HeaderView(titleText: "Squat")
-                .preferredColorScheme(.dark)
-                .previewLayout(/*@START_MENU_TOKEN@*/.sizeThatFits/*@END_MENU_TOKEN@*/)
-        }
+        HistoryView()
     }
 }
