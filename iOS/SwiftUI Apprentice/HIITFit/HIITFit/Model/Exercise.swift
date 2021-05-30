@@ -30,44 +30,49 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-import SwiftUI
+import Foundation
 
-struct HistoryView: View {
-    let history = HistoryStore()
-
-    var body: some View {
-        ZStack(alignment: .topTrailing) {
-            Button(action: {}) {
-                Image(systemName: "xmark.circle")
+struct Exercise {
+    let exerciseName: String
+    let videoName: String
+    
+    enum ExerciseEnum: CustomStringConvertible {
+        case squat
+        case stepUp
+        case burpee
+        case sunSalute
+        
+        var description: String {
+            switch self {
+            case .squat:
+                return NSLocalizedString("Squat", comment: "exercise")
+            case .stepUp:
+                return NSLocalizedString("Step Up", comment: "exercise")
+            case .burpee:
+                return NSLocalizedString("Burpee", comment: "exercise")
+            case .sunSalute:
+                return NSLocalizedString(
+                    "Sun Salute", comment: "yoga stretch")
             }
-            .font(.title)
-            .padding(.trailing)
-
-            VStack {
-                Text(NSLocalizedString("History", comment: "view user activity"))
-                    .font(.title)
-                    .padding()
-                Form {
-                  ForEach(history.exerciseDays) { day in
-                    Section(
-                      header:
-                        Text(day.date.formatted(as: "MMM d"))
-                        .font(.headline)) {
-                      ForEach(day.exercises, id: \.self) { exercise in
-                        Text(exercise)
-                      }
-                    }
-                  }
-                }
-            }
-            
         }
-
     }
+    
 }
 
-struct HistoryView_Previews: PreviewProvider {
-    static var previews: some View {
-        HistoryView()
-    }
+
+extension Exercise {
+    static let exercises = [
+        Exercise(
+            exerciseName: String(describing: ExerciseEnum.squat),
+            videoName: "squat"),
+        Exercise(
+            exerciseName: String(describing: ExerciseEnum.stepUp),
+            videoName: "step-up"),
+        Exercise(
+            exerciseName: String(describing: ExerciseEnum.burpee),
+            videoName: "burpee"),
+        Exercise(
+            exerciseName: String(describing: ExerciseEnum.sunSalute),
+            videoName: "sun-salute")
+    ]
 }
