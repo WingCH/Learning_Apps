@@ -37,18 +37,20 @@ import AVKit
 
 struct ExerciseView: View {
 
+    @State private var showSuccess = false
+    @State private var rating = 0
     @Binding var selectedTab: Int
     let index: Int
     let interval: TimeInterval = 30
 
     var lastExercise: Bool {
-      index + 1 == Exercise.exercises.count
+        index + 1 == Exercise.exercises.count
     }
     
     var body: some View {
         GeometryReader { geometry in
             VStack {
-                HeaderView(titleText: Exercise.exercises[index].exerciseName)
+                HeaderView(selectedTab: $selectedTab, titleText: Exercise.exercises[index].exerciseName)
                     .padding(.bottom)
                 if let url = Bundle.main.url(
                     forResource: Exercise.exercises[index].videoName,
@@ -68,12 +70,20 @@ struct ExerciseView: View {
 
                     }
                     Button("Done") {
-                        selectedTab = lastExercise ? 9 : selectedTab + 1
+                        if lastExercise {
+                            showSuccess.toggle()
+                        } else {
+                            selectedTab += 1
+                        }
                     }
+                    .sheet(isPresented: $showSuccess) {
+                        SuccessView(selectedTab: $selectedTab)
+                    }
+
                 }
 
                 
-                RatingView()
+                RatingView(rating: $rating)
                     .padding()
 
                 Spacer()
@@ -89,6 +99,6 @@ struct ExerciseView: View {
 
 struct ExerciseView_Previews: PreviewProvider {
     static var previews: some View {
-        ExerciseView(selectedTab: .constant(1), index: 0)
+        ExerciseView(selectedTab: .constant(3), index: 3)
     }
 }
