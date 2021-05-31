@@ -33,6 +33,8 @@
 import SwiftUI
 
 struct WelcomeView: View {
+    @Binding var selectedTab: Int
+
     var body: some View {
         ZStack {
             VStack {
@@ -52,10 +54,10 @@ struct WelcomeView: View {
 
                     Image("step-up")
                         .resizedToFill(width: 240, height: 240)
-                        .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                        .clipShape(Circle())
                     
                 }
-                Button(action: { }) {
+                Button(action: { selectedTab = 0 }) {
                     Label(NSLocalizedString("Get Started", comment: "invitation")
                           , systemImage: "arrow.right.circle")
                 }
@@ -65,8 +67,6 @@ struct WelcomeView: View {
                     RoundedRectangle(cornerRadius: 20)
                         .stroke(Color.gray, lineWidth: 2))
 
-
-
             }
         }
     }
@@ -74,6 +74,6 @@ struct WelcomeView: View {
 
 struct WelcomeView_Previews: PreviewProvider {
     static var previews: some View {
-        WelcomeView()
+        WelcomeView(selectedTab: .constant(9))
     }
 }
