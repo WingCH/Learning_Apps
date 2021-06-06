@@ -38,12 +38,26 @@ struct ExerciseDay: Identifiable {
     var exercises: [String] = []
 }
 
-struct HistoryStore {
+class HistoryStore: ObservableObject {
     init() {
-      #if DEBUG
-      createDevData()
-      #endif
+        #if DEBUG
+        createDevData()
+        #endif
     }
 
-    var exerciseDays: [ExerciseDay] = []
+    @Published var exerciseDays: [ExerciseDay] = []
+
+    func addDoneExercise(_ exerciseName: String) {
+        let today = Date()
+        if today.isSameDay(as: exerciseDays[0].date) {
+            // 1 在date第一元素exerciseDays是用戶最近的鍛煉一天。如果today與 this 相同date，則將當前追加exerciseName到exercisesthis的數組中exerciseDay。
+            print("Adding \(exerciseName)")
+            exerciseDays[0].exercises.append(exerciseName)
+        } else {
+            exerciseDays.insert( // 2 如果today是新的一天，則創建一個新ExerciseDay對象並將其插入exerciseDays數組的開頭。
+                ExerciseDay(date: today, exercises: [exerciseName]),
+                at: 0)
+        }
+    }
+
 }

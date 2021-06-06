@@ -37,6 +37,8 @@ import AVKit
 
 struct ExerciseView: View {
 
+    @EnvironmentObject var history: HistoryStore
+    @State private var showHistory = false
     @State private var showSuccess = false
     @State private var rating = 0
     @Binding var selectedTab: Int
@@ -69,6 +71,8 @@ struct ExerciseView: View {
                         showTimer.toggle()
                     }
                     Button("Done") {
+                        history.addDoneExercise(Exercise.exercises[index].exerciseName)
+
                         timerDone = false
                         showTimer.toggle()
 
@@ -91,7 +95,12 @@ struct ExerciseView: View {
                 Spacer()
                 RatingView(rating: $rating) // Move RatingView below Spacer
                     .padding()
-                Button(NSLocalizedString("History", comment: "view user activity")){}
+                Button(NSLocalizedString("History", comment: "view user activity")){
+                    showHistory.toggle()
+                }.sheet(isPresented: $showHistory) {
+                    HistoryView(showHistory: $showHistory)
+                }
+                .padding(.bottom)
                 
             }
         }
@@ -101,5 +110,6 @@ struct ExerciseView: View {
 struct ExerciseView_Previews: PreviewProvider {
     static var previews: some View {
         ExerciseView(selectedTab: .constant(3), index: 3)
+            .environmentObject(HistoryStore())
     }
 }
