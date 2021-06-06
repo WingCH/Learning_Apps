@@ -44,6 +44,12 @@ struct ContentView: View {
         }
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
         .environmentObject(HistoryStore())
+        .onAppear {
+            print(FileManager.default.urls(
+                    for: .documentDirectory,
+                    in: .userDomainMask))
+        }
+
     }
 }
 
