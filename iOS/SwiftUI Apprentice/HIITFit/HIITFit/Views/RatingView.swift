@@ -44,19 +44,27 @@ struct RatingView: View {
 
     // 1
     init(exerciseIndex: Int) {
-      self.exerciseIndex = exerciseIndex
-      // 2
-      let desiredLength = Exercise.exercises.count
-      if ratings.count < desiredLength {
-        // 3
-        ratings = ratings.padding(
-          toLength: desiredLength,
-          withPad: "0",
-          startingAt: 0)
-      }
+        self.exerciseIndex = exerciseIndex
+        // 2
+        let desiredLength = Exercise.exercises.count
+        if ratings.count < desiredLength {
+            // 3
+            ratings = ratings.padding(
+                toLength: desiredLength,
+                withPad: "0",
+                startingAt: 0)
+        }
     }
 
     
+    fileprivate func convertRating() {
+        let index = ratings.index(
+            ratings.startIndex,
+            offsetBy: exerciseIndex)
+        let character = ratings[index]
+        rating = character.wholeNumberValue ?? 0
+    }
+
     var body: some View {
         HStack {
             ForEach(1 ..< maximumRating + 1) { index in
@@ -66,15 +74,15 @@ struct RatingView: View {
                     .onTapGesture {
                         updateRating(index: index)
                     }
+                    .onChange(of: ratings) { _ in
+                        convertRating()
+                    }
+
             }
         }
         .font(.largeTitle)
         .onAppear {
-            let index = ratings.index(
-                ratings.startIndex,
-                offsetBy: exerciseIndex)
-            let character = ratings[index]
-            rating = character.wholeNumberValue ?? 0
+            convertRating()
         }
     }
 
