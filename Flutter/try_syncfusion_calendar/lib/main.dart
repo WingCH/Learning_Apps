@@ -93,20 +93,37 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          List<Appointment> _list =
-              _dataSource!.appointments!.cast<Appointment>();
-          _list.add(
+          /*
+          方法： 成個_dataSource換
+          ref: https://www.syncfusion.com/kb/12616/how-to-add-the-appointments-to-firestore-database-using-flutter-calendar
+           */
+          // List<Appointment> _list =
+          // _dataSource!.appointments!.cast<Appointment>();
+          // _list.add(
+          //   Appointment(
+          //     startTime: DateTime.now(),
+          //     endTime: DateTime.now().add(const Duration(hours: 2)),
+          //     subject: 'Conference',
+          //     color: Color(0xFF0F8644),
+          //     isAllDay: false,
+          //   ),
+          // );
+          // setState(() {
+          //   _dataSource = MeetingDataSource(_list);
+          // });
+
+          /*
+          方法2: 只是加入要加入的event
+           */
+          _dataSource!.notifyListeners(CalendarDataSourceAction.add, [
             Appointment(
               startTime: DateTime.now(),
               endTime: DateTime.now().add(const Duration(hours: 2)),
               subject: 'Conference',
               color: Color(0xFF0F8644),
               isAllDay: false,
-            ),
-          );
-          setState(() {
-            _dataSource = MeetingDataSource(_list);
-          });
+            )
+          ]);
         },
         child: Icon(Icons.add),
       ),
