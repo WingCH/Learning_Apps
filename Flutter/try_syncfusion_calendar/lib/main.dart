@@ -85,6 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: SfCalendar(
           view: CalendarView.month,
           showNavigationArrow: true,
+          initialSelectedDate: DateTime.now(),
           dataSource: _dataSource,
           monthViewSettings: MonthViewSettings(
             appointmentDisplayMode: MonthAppointmentDisplayMode.indicator,
