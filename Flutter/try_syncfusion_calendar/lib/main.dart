@@ -3,6 +3,10 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 import 'package:syncfusion_localizations/syncfusion_localizations.dart';
 
+/*
+How to add the appointments to Firestore Database using Flutter Calendar
+https://www.syncfusion.com/kb/12616/how-to-add-the-appointments-to-firestore-database-using-flutter-calendar
+ */
 void main() {
   runApp(MyApp());
 }
@@ -58,16 +62,26 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  MeetingDataSource? _dataSource;
+
+  @override
+  void initState() {
+    super.initState();
+    _dataSource = MeetingDataSource(_getDataSource());
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
       body: Container(
         // height: 500,
         child: SfCalendar(
           view: CalendarView.month,
           showNavigationArrow: true,
-          dataSource: MeetingDataSource(_getDataSource()),
+          dataSource: _dataSource,
           monthViewSettings: MonthViewSettings(
             appointmentDisplayMode: MonthAppointmentDisplayMode.indicator,
             showAgenda: true,
@@ -76,6 +90,25 @@ class _MyHomePageState extends State<MyHomePage> {
             dayFormat: 'EEE',
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          List<Appointment> _list =
+              _dataSource!.appointments!.cast<Appointment>();
+          _list.add(
+            Appointment(
+              startTime: DateTime.now(),
+              endTime: DateTime.now().add(const Duration(hours: 2)),
+              subject: 'Conference',
+              color: Color(0xFF0F8644),
+              isAllDay: false,
+            ),
+          );
+          setState(() {
+            _dataSource = MeetingDataSource(_list);
+          });
+        },
+        child: Icon(Icons.add),
       ),
     );
   }
