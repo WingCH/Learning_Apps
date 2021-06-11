@@ -70,6 +70,10 @@ class _MyHomePageState extends State<MyHomePage> {
     _dataSource = MeetingDataSource(_getDataSource());
   }
 
+  void calendarTapped(CalendarTapDetails details) {
+    print(details);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -89,6 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
             agendaItemHeight: 70,
             dayFormat: 'EEE',
           ),
+          onTap: calendarTapped,
         ),
       ),
       floatingActionButton: FloatingActionButton(
@@ -131,6 +136,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   List<Appointment> _getDataSource() {
+    // https://help.syncfusion.com/flutter/calendar/appointments
     final List<Appointment> meetings = <Appointment>[];
     final DateTime today = DateTime.now();
     final DateTime startTime =
@@ -158,6 +164,9 @@ class MeetingDataSource extends CalendarDataSource {
     appointments = source;
   }
 
+/*
+  以下只在 非Appointment 會觸發
+   */
 // @override
 // DateTime getStartTime(int index) {
 //   return appointments![index].from;
