@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
+import 'package:syncfusion_localizations/syncfusion_localizations.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,6 +12,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        SfGlobalLocalizations.delegate
+      ],
+      supportedLocales: [
+        const Locale('zh', 'HK'),
+      ],
+      locale: const Locale('zh', 'HK'),
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
